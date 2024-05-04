@@ -5,3 +5,52 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+if Rails.env.development?
+    Category.create!(
+      name: "Oculist",
+    )
+    Category.create!(
+      name: "Therapist",
+    )
+    Category.create!(
+      name: "Surgeon",
+    )
+    d = 0
+    while d < 2
+      Doctor.create!(
+        phone: Faker::Number.number(digits: 10),
+        name:Faker::Artist.name,
+        email:Faker::Internet.email,
+        category_id: 1,
+        password: "123456",
+        password_confirmation: "123456"
+      )
+      d += 1
+    end
+    d = 0
+    while d < 2
+      Doctor.create!(
+        phone: Faker::Number.number(digits: 10),
+        name:Faker::Artist.name,
+        email:Faker::Internet.email,
+        category_id: 2,
+        password: "123456",
+        password_confirmation: "123456"
+      )
+      d += 1
+    end
+    d = 0
+    while d < 2
+      Doctor.create!(
+        phone: Faker::Number.number(digits: 10),
+        name:Faker::Artist.name,
+        email:Faker::Internet.email,
+        category_id: 3,
+        password: "123456",
+        password_confirmation: "123456"
+      )
+      d += 1
+    end
+    puts "Doctors create"
+end
