@@ -45,6 +45,7 @@ gem "bootsnap", require: false
 gem "devise"
 gem "haml"
 gem 'cancancan'
+gem "faker"
 # Use Sass to process CSS
 # gem "sassc-rails"
 

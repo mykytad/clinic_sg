@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   devise_for :doctors, controllers: {
     sessions: 'doctors/sessions'
   }
+  resources :categories do
+    resources :doctors
+  end
   root "home#index"
   resources :users, only: [:show]
   resources :doctors, only: [:show]

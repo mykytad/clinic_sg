@@ -1,0 +1,5 @@
+%h2 What kind of doctor do you need?
+%ul.list-group
+  -@categories.each do |category|
+    %li.list-group-item 
+      =link_to category.name, category_path(category)
