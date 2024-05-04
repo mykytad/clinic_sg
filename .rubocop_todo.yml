@@ -130,6 +130,9 @@ Style/SpecialGlobalVars:
 Style/StringLiterals:
   Enabled: false
 
+Lint/DuplicateElsifCondition:
+  Enabled: false
+
 # Offense count: 1
 # This cop supports safe autocorrection (--autocorrect).
 # Configuration parameters: .
