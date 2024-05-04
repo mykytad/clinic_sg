@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class Doctors::RegistrationsController < Devise::RegistrationsController
+  before_action :configure_sign_up_params, if: :devise_controller?
+
   # include Accessible
   # skip_before_action :check_user, except: [:new, :create]
   # before_action :configure_sign_up_params, only: [:create]
@@ -40,12 +42,12 @@ class Doctors::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  # protected
+  protected
 
   # If you have extra params to permit, append them to the sanitizer.
-  # def configure_sign_up_params
-  #   devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
-  # end
+  def configure_sign_up_params
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:phone])
+  end
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_account_update_params
