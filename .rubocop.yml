@@ -73,6 +73,14 @@ Style/NumericPredicate:
 Style/RedundantSelf:
   Enabled: false
 
+Layout/HashAlignment:
+  Enabled: false
+
+Layout/TrailingEmptyLines:
+  Enabled: false
+Layout/SpaceAfterColon:
+  Enabled: false
+
 AllCops:
   Exclude:
     - 'config/**/*'
