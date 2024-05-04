@@ -1,0 +1,3 @@
+=form_with url: appointmets_path do |form|
+  =form.hidden_field(:doctor_id, :value => @doctor.id)
+  =form.submit "make an appointment"
