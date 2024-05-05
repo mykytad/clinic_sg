@@ -1,5 +1,4 @@
 class AppointmetsController < ApplicationController
-
   def create
     @doctor = Doctor.find(params[:doctor_id])
     if @doctor.allow_new_appointments?

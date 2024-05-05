@@ -6,5 +6,5 @@
 %ul
   -@appointments.each do |appointment|
     %li
-      =appointment.created_at
+      =appointment.created_at.strftime("%d.%m.%Y, %H:%M")
       =appointment.recommendation
