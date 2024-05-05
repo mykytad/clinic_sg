@@ -1,0 +1,6 @@
+%h2 Your appointment
+-@appointments.each do |appointment|
+  =appointment.user.name
+  =appointment.created_at.strftime("%d.%m.%Y, %H:%M")
+  =appointment.recommendation
+  =link_to "Give recommendation", edit_appointmet_path(appointment)

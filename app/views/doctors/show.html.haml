@@ -1,8 +1,12 @@
 %h2= @doctor.name
--if @currect_appointment && @doctor.allow_new_appointments?
-  %p Registration closed
--else
-  =render "appointmet_btn"
+-if doctor_signed_in?
+  =link_to "open apointments", appointmets_path(:doctor_id => @doctor.id)
+
+-if user_signed_in?
+  -if @currect_appointment && @doctor.allow_new_appointments?
+    %p Registration closed
+  -else
+    =render "appointmet_btn"
 %ul
   -@appointments.each do |appointment|
     %li
