@@ -59,6 +59,5 @@ AdminUser.create!(
   phone:'1020304050',
   email: 'admin@example.com',
   password: 'password',
-  password_confirmation: 'password'
-  ) if Rails.env.development?
-  puts "Admin create"
+  password_confirmation: 'password') if Rails.env.development?
+puts "Admin create"

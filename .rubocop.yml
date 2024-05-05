@@ -78,9 +78,24 @@ Layout/HashAlignment:
 
 Layout/TrailingEmptyLines:
   Enabled: false
+
 Layout/SpaceAfterColon:
   Enabled: false
 
+Layout/EmptyLines:
+  Enabled: false
+
+Style/WordArray:
+  Enabled: false
+
+Lint/UnusedMethodArgument:
+  Enabled: false
+
+Style/MultilineIfModifier:
+  Enabled: false
+
+Layout/MultilineMethodCallBraceLayout:
+  Enabled: false
 AllCops:
   Exclude:
     - 'config/**/*'
