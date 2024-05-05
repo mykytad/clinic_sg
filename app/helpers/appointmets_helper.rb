@@ -1,0 +1,2 @@
+module AppointmetsHelper
+end
