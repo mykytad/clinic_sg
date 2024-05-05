@@ -13,6 +13,14 @@ class Doctor < ApplicationRecord
     end
   end
 
+  def self.ransackable_associations(auth_object = nil)
+    ["appointments", "category", "users"]
+  end
+
+  def self.ransackable_attributes(auth_object = nil)
+    ["category_id", "created_at", "email", "encrypted_password", "id", "name", "phone", "remember_created_at", "reset_password_sent_at", "reset_password_token", "updated_at"]
+  end
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
