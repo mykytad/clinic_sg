@@ -53,11 +53,31 @@ if Rails.env.development?
     d += 1
   end
   puts "Doctors create"
+
+  AdminUser.create!(
+    name: 'Admin',
+    phone:'1020304050',
+    email: 'admin@example.com',
+    password: 'password',
+    password_confirmation: 'password')
 end
-AdminUser.create!(
-  name: 'Admin',
-  phone:'1020304050',
-  email: 'admin@example.com',
-  password: 'password',
-  password_confirmation: 'password') if Rails.env.development?
+
+if Rails.env.production?
+  AdminUser.create!(
+    name: 'Admin',
+    phone:'1020304050',
+    email: 'admin@example.com',
+    password: 'password',
+    password_confirmation: 'password')
+
+  Category.create!(
+    name: "Oculist"
+  )
+  Category.create!(
+    name: "Therapist"
+  )
+  Category.create!(
+    name: "Surgeon"
+  )
+end
 puts "Admin create"
