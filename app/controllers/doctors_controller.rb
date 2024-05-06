@@ -5,7 +5,7 @@ class DoctorsController < ApplicationController
   def show
     if doctor_signed_in?
       @doctor = Doctor.find(params[:id])
-      @appointments = @doctor.appointments
+      @appointments = @doctor.appointments.accessible_by(current_ability)
     elsif user_signed_in?
       @doctor = Doctor.find(params[:id])
       @appointments = @doctor.appointments.where(user_id: current_user.id)

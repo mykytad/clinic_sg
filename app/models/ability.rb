@@ -28,7 +28,10 @@ class Ability
     #
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/blob/develop/docs/define_check_abilities.md
-
-    can :read, Appointment, user: user
+    if user.is_a?(Doctor)
+      can :manage, Appointment, doctor: user
+    else
+      can :read, Appointment, user: user
+    end
   end
 end

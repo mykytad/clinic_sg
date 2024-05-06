@@ -1,11 +1,12 @@
 %h2 Your appointments
 %ul
   -@appointments.each do |appointment|
-    %li
-      %strong=appointment.user.name
-      %br
-      =appointment.created_at.strftime("%d.%m.%Y, %H:%M")
-      =appointment.recommendation
-      =link_to "Give recommendation", edit_appointmet_path(appointment)
+    -if can? :manage, appointment
+      %li
+        %strong=appointment.user.name
+        %br
+        =appointment.created_at.strftime("%d.%m.%Y, %H:%M")
+        =appointment.recommendation
+        =link_to "Give recommendation", edit_appointmet_path(appointment)
 -if @appointments.empty?
   %p you don't have open appointments
