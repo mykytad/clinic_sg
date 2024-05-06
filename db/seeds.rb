@@ -68,7 +68,9 @@ if Rails.env.production?
     phone:'1020304050',
     email: 'admin@example.com',
     password: 'password',
-    password_confirmation: 'password')
+    password_confirmation: 'password'
+  )
+  puts "Admin create"
 
   Category.create!(
     name: "Oculist"
@@ -80,4 +82,3 @@ if Rails.env.production?
     name: "Surgeon"
   )
 end
-puts "Admin create"
