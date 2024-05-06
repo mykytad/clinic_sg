@@ -4,7 +4,12 @@
       %div{:class => "col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto"}
         %ul.nav.me-auto
           %li.nav-item
-            =link_to"Clinic", root_path, :class=>"nav-link link-body-emphasis px-2 active link-dark"
+            -if user_signed_in?
+              =link_to"Patient Clinic", root_path, :class=>"nav-link link-body-emphasis px-2 active link-dark"
+            -elsif user_signed_in?
+              =link_to"Doctor Clinic", root_path, :class=>"nav-link link-body-emphasis px-2 active link-dark"
+            else
+              =link_to"Clinic", root_path, :class=>"nav-link link-body-emphasis px-2 active link-dark"
           %li.nav-item
             =link_to "Doctors", categories_path, :class=>"nav-link link-body-emphasis px-2 active link-dark"
       %div{:class => "text-end"}
