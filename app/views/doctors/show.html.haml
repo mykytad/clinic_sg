@@ -1,12 +1,15 @@
 %h2= @doctor.name
--if doctor_signed_in?
+-if doctor_signed_in? && current_doctor == @doctor
   =link_to "open apointments", appointmets_path(:doctor_id => @doctor.id)
 
 -if user_signed_in?
-  -if @currect_appointment && @doctor.allow_new_appointments?
-    %p Registration closed
-  -else
+  -if @currect_appointment 
+    %p You have open appointment with this doctor
+  -elsif @doctor.allow_new_appointments?
     =render "appointmet_btn"
+  -else
+    %p Doctor is currently busy
+  
 %ul
   -@appointments.each do |appointment|
     %li

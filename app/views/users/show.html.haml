@@ -3,6 +3,7 @@
   -@appointments.each do |appointment|
     -if can? :read, appointment
       %li
+        =appointment.doctor.name
         =appointment.recommendation
         =appointment.created_at.strftime("%d.%m.%Y, %H:%M")
         -if appointment.opens
