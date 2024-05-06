@@ -1,5 +1,7 @@
 %h2 Give recommendations
 =form_for(@appointment, url: appointmet_path) do |form|
   =form.label :recommendation
+  %br
   =form.text_area :recommendation
+  %br
   =form.submit "Send recommendation"
