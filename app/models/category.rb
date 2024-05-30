@@ -1,7 +1,7 @@
 class Category < ApplicationRecord
   has_many :doctors
 
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: true
 
   def self.ransackable_associations(auth_object = nil)
     ["doctors"]

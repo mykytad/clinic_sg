@@ -59,7 +59,9 @@ if Rails.env.development?
     phone:'1020304050',
     email: 'admin@example.com',
     password: 'password',
-    password_confirmation: 'password')
+    password_confirmation: 'password'
+  )
+  puts "Admin create"
 end
 
 if Rails.env.production?
